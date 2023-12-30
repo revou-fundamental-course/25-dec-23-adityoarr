@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h3>KATIK</h3>
+    </header>
+    <main class="main">
+        <h3 class="title"><strong>Welcome to KATIK</strong></h3>
+
+        <p class="description">
+            Hai Sobat, Selamat datang di Katik
+            <br />
+            Sebuah Web apps sederhana yang bertugas untuk menghitung nilai luas dan keliling SEGITIGA
+        </p>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openRumus(event, 'Luas')" id="defaultOpen">Luas</button>
+            <button class="tablinks" onclick="openRumus(event, 'Keliling')">Keliling</button>
+        </div>
+
+        <div id="Luas" class="tabcontent">
+            <p><img src="assets/segitiga-luas.png" class="gambar" /></p>
+            <h3>Rumus :</h3>
+            <p><i><strong>Luas = 1/2 x alas x tinggi</strong></i> atau <i><strong>L = 1/2 x a x t</strong></i></p>
+            <hr />
+            <h3>Perhitungan :</h3>
+            <div class="wrapper-table">
+                <div class="wrapper-row">
+                    <div class="hitung-form">
+                        <input type="text" id="alas" name="alas" placeholder="Masukkan alas"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                        <br />
+                        <input type="text" id="tinggi" name="tinggi" placeholder="Masukkan tinggi"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="hitung-form">
+                        <input class="primary" type="button" value="Hitung" onclick="hitungLuas()">
+                        <br />
+                        <input class="warning" type="button" value="Reset" onclick="reset('luas')">
+                    </div>
+                    <div class="hitung-form hasil" id="luasRes">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Keliling" class="tabcontent">
+            <p><img src="assets/segitiga-keliling.jpg" class="gambar" /></p>
+            <h3>Rumus :</h3>
+            <p><i><strong>Keliling = A + B + C</strong></i> atau <i><strong>K = A + B + C</strong></i></p>
+            <hr />
+            <h3>Perhitungan :</h3>
+            <div class="wrapper-table">
+                <div class="wrapper-row">
+                    <div class="hitung-form">
+                        <input type="text" id="sisia" name="sisia" placeholder="Masukkan sisi A"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                        <br />
+                        <input type="text" id="sisib" name="sisib" placeholder="Masukkan sisi B"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                        <br />
+                        <input type="text" id="sisic" name="sisic" placeholder="Masukkan sisi C"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    </div>
+                    <div class="hitung-form">
+                        <input class="primary" type="button" value="Hitung" onclick="hitungKeliling()">
+                        <br />
+                        <input class="warning" type="button" value="Reset" onclick="reset('keliling')">
+                    </div>
+                    <div class="hitung-form hasil" id="kelilingRes">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>RevoU Mini Project<br />&copy; 2023-2024 by Adityo Ar Rafiuddin</p>
+    </footer>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

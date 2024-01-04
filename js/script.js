@@ -15,18 +15,26 @@ function openRumus(evt, rumusName) {
 function hitungLuas() {
     var alas = document.getElementById('alas').value;
     var tinggi = document.getElementById('tinggi').value;
-    res = Number(alas) * Number(tinggi) / 2;
-    html = "L = 1/2 x a x t<br/>L = 1/2 x " + alas + " x " + tinggi + "<br/>L = " + res;
-    document.getElementById("luasRes").innerHTML = html;
+    if (alas != "" && tinggi != "") {
+        res = Number(alas) * Number(tinggi) / 2;
+        html = "L = 1/2 x a x t<br/>L = 1/2 x " + alas + " x " + tinggi + "<br/>L = " + res;
+        document.getElementById("luasRes").innerHTML = html;
+    } else {
+        alert("Mohon isi semua input");
+    }
 }
 
 function hitungKeliling() {
     var sisia = document.getElementById('sisia').value;
     var sisib = document.getElementById('sisib').value;
     var sisic = document.getElementById('sisic').value;
-    res = Number(sisia) + Number(sisib) + Number(sisic);
-    html = "K = A + B + C<br/>K = " + sisia + " + " + sisib + " + " + sisic + "<br/>K = " + res;
-    document.getElementById("kelilingRes").innerHTML = html;
+    if (sisia != "" && sisib != "" && sisic != "") {
+        res = Number(sisia) + Number(sisib) + Number(sisic);
+        html = "K = A + B + C<br/>K = " + sisia + " + " + sisib + " + " + sisic + "<br/>K = " + res;
+        document.getElementById("kelilingRes").innerHTML = html;
+    } else {
+        alert("Mohon isi semua input");
+    }
 }
 
 function reset(val) {
